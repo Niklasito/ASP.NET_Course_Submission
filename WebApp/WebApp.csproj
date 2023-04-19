@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Identities\" />
+    <Folder Include="Models\Dtos\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="wwwroot\css\components\contactpage\_contactform.scss" />
+    <None Include="wwwroot\css\components\contactpage\_map.scss" />
+    <None Include="wwwroot\css\components\general\_breadcrumb.scss" />
+    <None Include="wwwroot\css\components\general\_card.scss" />
+    <None Include="wwwroot\css\components\general\_footer.scss" />
+    <None Include="wwwroot\css\components\general\_header.scss" />
+    <None Include="wwwroot\css\components\loginpage\_loginform.scss" />
+    <None Include="wwwroot\css\components\productdetails\_infotabs.scss" />
+    <None Include="wwwroot\css\components\productdetails\_productdetails.scss" />
+    <None Include="wwwroot\css\components\productdetails\_relatedproducts.scss" />
+    <None Include="wwwroot\css\components\registerpage\_registrationform.scss" />
+    <None Include="wwwroot\css\components\_bestcollection.scss" />
+    <None Include="wwwroot\css\components\_blog.scss" />
+    <None Include="wwwroot\css\components\_posts.scss" />
+    <None Include="wwwroot\css\components\_salesshowcase.scss" />
+    <None Include="wwwroot\css\components\_showcase.scss" />
+    <None Include="wwwroot\css\components\_signupnewsletter.scss" />
+    <None Include="wwwroot\css\components\_topselling.scss" />
+    <None Include="wwwroot\css\core\_buttons.scss" />
+    <None Include="wwwroot\css\core\_forms.scss" />
+    <None Include="wwwroot\css\core\_mixins.scss" />
+    <None Include="wwwroot\css\core\_utilities.scss" />
+    <None Include="wwwroot\css\core\_variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.Aspnetcore.identity.entityframeworkcore" Version="7.0.5" />
+    <PackageReference Include="microsoft.Aspnetcore.identity.ui" Version="7.0.5" />
+    <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="7.0.5" />
+    <PackageReference Include="microsoft.entityframeworkcore.tools" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
