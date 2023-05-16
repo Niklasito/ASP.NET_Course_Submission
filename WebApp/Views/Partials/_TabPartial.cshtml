@@ -1,4 +1,6 @@
-﻿<ul class="nav nav-tabs tabstyle container" id="tablist" role="tablist">
+﻿@model ProductModel
+
+<ul class="nav nav-tabs tabstyle container" id="tablist" role="tablist">
     <li class="nav-item" role="presentation">
         <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description"
                 type="button" role="tab" aria-controls="description" aria-selected="true">
@@ -29,23 +31,11 @@
 <div class="tab-content container tab-container">
     <div class="tab-pane fade show active tab-info" id="description" role="tabpanel"
          aria-labelledby="description-tab">
-        <h6 class="tabtitle">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</h6>
+        <h6 class="tabtitle">@Model.ProductName</h6>
 
         <div class="information">
             <p class="tabinformation">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                cusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem
-                ipsum dolor sit amet. Lorem ipsum dolor.<br>
-                accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing
-                lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?<br>
-                Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum
-                eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis
-                eu, distinctio tortor? Dapibus delectus! Consequuntur luctus. <br>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem
-                ipsum dolor.
+               @Model.ProductDescription
             </p>
 
             <div class="img-container">

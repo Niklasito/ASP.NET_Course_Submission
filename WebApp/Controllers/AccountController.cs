@@ -1,13 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using WebApp.Models.Identities;
 using WebApp.Models.ViewModels;
-
+using WebApp.Services;
 namespace WebApp.Controllers;
 
 public class AccountController : Controller
 {
 
-    #region My Account(//domain.com/account)
+    private readonly AuthService _auth;
+    private readonly SignInManager<AppUser> _signInManager;
+    public AccountController(AuthService auth, SignInManager<AppUser> signInManager)
+    {
+        _auth = auth;
+        _signInManager = signInManager;
+    }
 
+
+    #region My Account(//domain.com/account)
+    [Authorize]
     //domain.com/account
     public IActionResult Index()
     {
@@ -25,34 +38,82 @@ public class AccountController : Controller
     }
 
     [HttpPost]
-    public IActionResult Register(AccountRegisterViewModel viewModel )
+    
+    public async Task<IActionResult> Register(AccountRegisterViewModel viewModel)
     {
-        return View();
+        if(ModelState.IsValid)
+        {
+            if (await _auth.UserAlreadyExistsAsync(x => x.Email == viewModel.Email))
+            {
+                ModelState.AddModelError("", "An account with this email already exists.");
+                
+            }
+                
+
+            if(await _auth.RegisterUserAsync(viewModel))
+            return RedirectToAction("LogIn", "Account");
+        }
+
+
+        return View(viewModel);
     }
+
 
     #endregion
   
     
     #region Login(//domain.com/account/login)
-    public IActionResult LogIn()
+    public IActionResult LogIn(string ReturnUrl = null!)
     {
-        return View();
+        var viewModel = new AccountLoginViewModel();
+        
+        if (ReturnUrl != null)
+        viewModel.ReturnUrl = ReturnUrl;
+        
+        return View(viewModel);
     }
 
     //domain.com/login
 
     [HttpPost]
-    public IActionResult LogIn(AccountLoginViewModel viewModel)
+    public async Task<IActionResult> LogIn(AccountLoginViewModel viewModel)
     {
-        return View();
+        if(ModelState.IsValid)
+        {
+            if (await _auth.LogInAsync(viewModel))
+                return LocalRedirect(viewModel.ReturnUrl); 
+
+            ModelState.AddModelError("", "Incorrect E-mail or Password");
+        }
+        
+        return View(viewModel);
     }
 
     #endregion
 
 
-    #region Logout(//domain.com/account/logout)
+    #region Logout
     //domain.com/account/logout
-    public IActionResult LogOut()
+    public async Task<IActionResult> LogOut()
+    {
+
+        if(_signInManager.IsSignedIn(User))
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+
+        }
+
+        return RedirectToAction("Index", "Home");
+           
+    }
+
+
+
+    #endregion
+
+    #region AccessDenied
+    public IActionResult AccessDenied()
     {
         return View();
     }

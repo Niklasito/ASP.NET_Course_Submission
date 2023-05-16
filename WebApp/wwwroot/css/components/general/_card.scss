@@ -5,6 +5,7 @@
     margin: auto;
 
     .card-image-small{
+        height: 40vh;
         max-width: 40vw;
         margin: auto;
 
@@ -16,7 +17,8 @@
 
     .card-image-large{
         margin: auto;
-        max-width: 25vw;
+        height: 40vh;
+        max-width: 15vw;
     }
 
     .card-information{

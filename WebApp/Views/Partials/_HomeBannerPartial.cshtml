@@ -1,13 +1,23 @@
-﻿<section class="banner">
+﻿@model List<ProductModel>
+
+
+
+@{
+    var products = await productService.GetAllAsync();
+     
+}
+@if(products.Any()) {
+<section class="banner">
     <div class="container showcase">
         <div class="content">
             <p class="ingress">WELCOME TO BMERKETO SHOP</p>
             <h3 class="title">Exclusive Chair<br>Gold Collection.</h3>
-            <button class="theme-button">SHOP NOW</button>
+            <a class="theme-button" asp-controller="Products" asp-action="Index">SHOP NOW</a>
         </div>
 
         <div class="image">
-            <img class="img" src="/images/625x647.svg">
+            <img class="img" src="@products.First().ImageUrl">
         </div>
     </div>
 </section>
+}

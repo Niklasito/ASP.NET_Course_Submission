@@ -1,64 +1,37 @@
-﻿<div class="topSelling">
-    <h4 class="sectiontitle">Top Selling Products This Week</h4>
+﻿@model List<ProductModel>
+
+
+@{
+    var products = await productService.GetByPopularCollectionTagAsync();
+}
+
+
+@if (products.Any()) 
+{
+<div class="topSelling">
+    <h4 class="sectiontitle">Popular products</h4>
+
     <div class="topSelling-card-section">
+       @foreach(var product in products.Skip(7).Take(6))
+       {
+           
         <div class="card topSelling-card">
-            <img class="card-image-small" alt="" src="/images/270x295.svg">
+            <a asp-controller="Products" asp-action="Details" asp-route-productName="@product.ProductName">
+            <img class="card-image-small" alt="" src="@product.ImageUrl">
 
             <div class="card-information">
-                <h6 class="card-title">Apple Watch Series</h6>
-                <p class="card-price">$30.00</p>
+                <h6 class="card-title">@product.ProductName</h6>
+                        <p class="card-price">$@string.Format("{0:F0}", product.Price)</p>
                 <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
             </div>
+             </a>
         </div>
-
-        <div class="card topSelling-card">
-            <img class="card-image-small" alt="" src="/images/270x295.svg">
-
-            <div class="card-information">
-                <h6 class="card-title">Apple Watch Series</h6>
-                <p class="card-price">$30.00</p>
-                <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
-            </div>
-        </div>
-        <div class="card topSelling-card">
-            <img class="card-image-small" alt="" src="/images/270x295.svg">
-
-            <div class="card-information">
-                <h6 class="card-title">Apple Watch Series</h6>
-                <p class="card-price">$30.00</p>
-                <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
-            </div>
-        </div>
-        <div class="card topSelling-card">
-            <img class="card-image-small" alt="" src="/images/270x295.svg">
-
-            <div class="card-information">
-                <h6 class="card-title">Apple Watch Series</h6>
-                <p class="card-price">$30.00</p>
-                <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
-            </div>
-        </div>
-        <div class="card topSelling-card">
-            <img class="card-image-small" alt="" src="/images/270x295.svg">
-
-            <div class="card-information">
-                <h6 class="card-title">Apple Watch Series</h6>
-                <p class="card-price">$30.00</p>
-                <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
-            </div>
-        </div>
-        <div class="card topSelling-card">
-            <img class="card-image-small" alt="" src="/images/270x295.svg">
-
-            <div class="card-information">
-                <h6 class="card-title">Apple Watch Series</h6>
-                <p class="card-price">$30.00</p>
-                <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
-            </div>
-        </div>
-    </div>
-    <div>
-        <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+           
+        }
     </div>
 </div>
+ <div>
+     <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
+     <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+}      

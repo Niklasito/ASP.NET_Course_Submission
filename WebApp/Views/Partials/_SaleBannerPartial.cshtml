@@ -1,15 +1,28 @@
-﻿<div class="sale-banner">
+﻿@model List<ProductModel>
+
+@{
+    var products = await productService.GetAllAsync();
+    
+}
+
+
+@if(products.Any()){
+<div class="sale-banner">
     <div class="sale container">
         <div class="sale-product">
+            
             <div class="card">
-                <img class="card-image-large" alt="" src="/images/369x310.svg">
+                <a asp-controller="Products" asp-action="Details" asp-route-productName="@products.First().ProductName">
+                <img class="card-image-large" alt="" src="@products.First().ImageUrl">
 
                 <div class="card-information">
-                    <h6 class="card-title">Apple Watch Series</h6>
-                    <p class="card-price">$30.00</p>
+                    <h6 class="card-title">@products.First().ProductName</h6>
+                    <p class="card-price">@products.First().Price</p>
                     <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
                 </div>
+                </a>
             </div>
+            
         </div>
 
         <div class="sale-card">
@@ -20,19 +33,24 @@
                 Get the best daily offer et accusam et justo duo dolores et ea rebum. Stet clita
                 kasd gubergren no sea taki
             </p>
-            <a href="#" class="discover">Discover More</a>
+            <p class="discover">Discover More</p>
         </div>
 
         <div class="sale-product">
+            
             <div class="card">
-                <img class="card-image-large" alt="" src="/images/369x310.svg">
+                <a asp-controller="Products" asp-action="Details" asp-route-productName="@products.Last().ProductName">
+                <img class="card-image-large" alt="" src="@products.Last().ImageUrl">
 
                 <div class="card-information">
-                    <h6 class="card-title">Apple Watch Series</h6>
-                    <p class="card-price">$30.00</p>
+                    <h6 class="card-title">@products.Last().ProductName</h6>
+                        <p class="card-price">$@string.Format("{0:F0}", products.Last().Price)</p>
                     <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
                 </div>
+                    </a>
             </div>
+            
         </div>
     </div>
 </div>
+}

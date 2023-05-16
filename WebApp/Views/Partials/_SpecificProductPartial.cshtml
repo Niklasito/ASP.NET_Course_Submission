@@ -1,21 +1,23 @@
-﻿<div class="container product-spec">
+﻿@model ProductModel
+
+
+
+<div class="container product-spec">
     <div class="image-container">
-        <img class="large-image" src="/images/501x430.svg" alt="">
+        <img class="large-image" src="@Model.ImageUrl" alt="">
 
         <div class="small-image-container">
-            <img class="small-image" src="/images/120x113.svg" alt="">
-            <img class="small-image" src="/images/120x113.svg" alt="">
-            <img class="small-image" src="/images/120x113.svg" alt="">
-            <img class="small-image" src="/images/120x113.svg" alt="">
+            <img class="small-image" src="@Model.ImageUrl" alt="">
+            <img class="small-image" src="@Model.ImageUrl" alt="">
+            <img class="small-image" src="@Model.ImageUrl" alt="">
+            <img class="small-image" src="@Model.ImageUrl" alt="">
         </div>
     </div>
 
     <div class="product-specifications">
-        <h6 class="product-name">Young Star Smart Shoe in Fashion</h6>
+        <h6 class="product-name">@Model.ProductName</h6>
         <p class="product-description">
-            Lirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-            takimata sanctus est Lorem ipsum dolor sit amet.
+            @Model.ProductDescription
         </p>
 
         <hr class="hr">
@@ -57,7 +59,7 @@
 
             <button class="light-button whishlist-btn">Add To Whishlist</button>
 
-            <p class="product-category">Category : Table Lamp, Lamp</p>
+            <p class="product-category">@Model.Category.CategoryName</p>
         </div>
     </div>
 </div>

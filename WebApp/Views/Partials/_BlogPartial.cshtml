@@ -1,44 +1,33 @@
-﻿<div class="blog container">
+﻿@model List<ProductModel>
+
+
+@{
+    var products = await productService.GetByFeaturedCollectionTagAsync();
+}
+
+@if (products.Any())
+{
+
+
+
+<div class="blog container">
+        @foreach (var product in products.Skip(7).Take(3))
+        {
     <div class="post">
-        <img class="post-image" alt="" src="/images/370x295.svg">
+        <a asp-controller="Products" asp-action="Details" asp-route-productName="@product.ProductName">
+        <img class="post-image" alt="" src="@product.ImageUrl">
 
         <div class="post-information">
-            <h6 class="post-title">Apple Watch Series</h6>
+            <h6 class="post-title">@product.ProductName</h6>
             <p class="post-preview">
-                Best dress for everyone ed totam velit risus viverra nobis donec recusandae
-                perspiciatis incididuno
+                @product.ProductDescription
             </p>
             <p class="post-author">Post By : Admin</p>
             <p class="post-comments">comments 13</p>
         </div>
+        </a>
     </div>
+           }
 
-
-    <div class="post">
-        <img class="post-image" alt="" src="/images/370x295.svg">
-
-        <div class="post-information">
-            <h6 class="post-title">Apple Watch Series</h6>
-            <p class="post-preview">
-                Best dress for everyone ed totam velit risus viverra nobis donec recusandae
-                perspiciatis incididuno
-            </p>
-            <p class="post-author">Post By : Admin</p>
-            <p class="post-comments">comments 13</p>
-        </div>
-    </div>
-
-    <div class="post">
-        <img class="post-image" alt="" src="/images/370x295.svg">
-
-        <div class="post-information">
-            <h6 class="post-title">Apple Watch Series</h6>
-            <p class="post-preview">
-                Best dress for everyone ed totam velit risus viverra nobis donec recusandae
-                perspiciatis incididuno
-            </p>
-            <p class="post-author">Post By : Admin</p>
-            <p class="post-comments">Comments : 13</p>
-        </div>
-    </div>
 </div>
+}
