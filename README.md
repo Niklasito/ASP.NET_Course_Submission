@@ -30,3 +30,9 @@ Man kan dessutom skapa nya produkter med formuläret som finns under "create pro
 
 ### username/email: customer@merketo.com
 ### password: Bytmig123!
+
+
+# Slutsats
+
+Det har varit ett givande projekt som absolut kan vidareutvecklas på många olika vis. Exempelvis skulle man kunna lägga till produkter i varukorg, se relaterade produkter, ha bättre användarinformation som användare etc. 
+Jag har lärt mig väldigt mycket även om jag i slutet haft begränsat med tid. Framförallt har jag känt att jag blivit mycket tryggare i C# men också att jobba med entity framework och MVC. 
