@@ -8,14 +8,14 @@
 
 @if (products.Any()) 
 {
-<div class="topSelling">
+<div class="topselling">
     <h4 class="sectiontitle">Popular products</h4>
 
-    <div class="topSelling-card-section">
+    <div class="topselling-card-section">
        @foreach(var product in products.Skip(7).Take(6))
        {
            
-        <div class="card topSelling-card">
+        <div class="card topselling-card">
             <a asp-controller="Products" asp-action="Details" asp-route-productName="@product.ProductName">
             <img class="card-image-small" alt="" src="@product.ImageUrl">
 
@@ -30,8 +30,5 @@
         }
     </div>
 </div>
- <div>
-     <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
-     <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
-</div>
+
 }      

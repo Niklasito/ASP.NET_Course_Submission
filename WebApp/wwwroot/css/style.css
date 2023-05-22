@@ -706,11 +706,11 @@ header .toggle {
   font-family: "Roboto", sans-seif;
 }
 
-.topSelling {
+.topselling {
   margin: 3rem;
   text-align: center;
 }
-.topSelling .topSelling-card-section {
+.topselling .topselling-card-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row: auto;
@@ -719,35 +719,35 @@ header .toggle {
   margin-top: 1.5rem;
 }
 @media (min-width: 768px) {
-  .topSelling .topSelling-card-section {
+  .topselling .topselling-card-section {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 2.5rem;
   }
 }
 @media (min-width: 992px) {
-  .topSelling .topSelling-card-section {
+  .topselling .topselling-card-section {
     grid-template-columns: repeat(6, 1fr);
   }
 }
-.topSelling .topSelling-card-section .topSelling-card .card-image-small {
+.topselling .topselling-card-section .topselling-card .card-image-small {
   max-width: 35vw;
 }
 @media (min-width: 768px) {
-  .topSelling .topSelling-card-section .topSelling-card .card-image-small {
+  .topselling .topselling-card-section .topselling-card .card-image-small {
     max-width: 25vw;
   }
 }
 @media (min-width: 992px) {
-  .topSelling .topSelling-card-section .topSelling-card .card-image-small {
+  .topselling .topselling-card-section .topselling-card .card-image-small {
     max-width: 15vw !important;
   }
 }
 @media (min-width: 1140px) {
-  .topSelling .topSelling-card-section .topSelling-card .card-image-small {
+  .topselling .topselling-card-section .topselling-card .card-image-small {
     max-width: initial;
   }
 }
-.topSelling .arrow-btn {
+.topselling .arrow-btn {
   border: 2px solid #CCCCCC;
   border-radius: 5px;
   color: #AEAEAE;
@@ -1114,7 +1114,7 @@ header .toggle {
     column-gap: 30px;
     row-gap: 30px;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "name email" "phoneNumber companyName" "message message" "terms terms" "button button";
+    grid-template-areas: "name email" "phonenumber companyname" "message message" "terms terms" "button button";
   }
 }
 .contact-form .form-container form .name {
@@ -1127,13 +1127,13 @@ header .toggle {
   max-width: 90%;
   margin: auto;
 }
-.contact-form .form-container form .phoneNumber {
-  grid-area: phoneNumber;
+.contact-form .form-container form .phonenumber {
+  grid-area: phonenumber;
   max-width: 90%;
   margin: auto;
 }
-.contact-form .form-container form .companyName {
-  grid-area: companyName;
+.contact-form .form-container form .companyname {
+  grid-area: companyname;
   max-width: 90%;
   margin: auto;
 }

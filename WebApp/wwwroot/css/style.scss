@@ -1,14 +1,14 @@
-//Core
+
 @import "core/mixins";
 @import "core/variables";
 @import "core/utilities";
 @import "core/buttons";
 @import "core/forms";
 
-@import "components/general/breadcrumb";
-@import "components/general/footer";
-@import "components/general/header";
-@import "components/general/card";
+@import "components/breadcrumb";
+@import "components/footer";
+@import "components/header";
+@import "components/card";
 
 
 @import "components/showcase";
@@ -20,15 +20,15 @@
 @import "components/signupnewsletter";
 
 
-@import "components/productdetails/productdetails";
-@import "components/productdetails/infotabs";
-@import "components/productdetails/relatedproducts";
+@import "components/productdetails";
+@import "components/infotabs";
+@import "components/relatedproducts";
 
 
-@import "components/contactpage/contactform";
-@import "components/contactpage/map";
+@import "components/contactform";
+@import "components/map";
 
-@import "components/registerpage/registrationform";
+@import "components/registrationform";
 
 
-@import "components/loginpage/loginform";
+@import "components/loginform";

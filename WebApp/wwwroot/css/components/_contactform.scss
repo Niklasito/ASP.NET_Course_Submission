@@ -24,7 +24,7 @@
                 row-gap: 30px;
                 grid-template-columns: 1fr 1fr;
                 grid-template-areas:    "name email"
-                                        "phoneNumber companyName"
+                                        "phonenumber companyname"
                                         "message message"
                                         "terms terms"
                                         "button button";
@@ -32,8 +32,8 @@
 
             .name           { grid-area: name;  max-width: 90%; margin: auto;}
             .email          { grid-area: email;  max-width: 90%; margin: auto;}
-            .phoneNumber    { grid-area: phoneNumber;  max-width: 90%; margin: auto;}
-            .companyName    { grid-area: companyName;  max-width: 90%; margin: auto;}
+            .phonenumber    { grid-area: phonenumber;  max-width: 90%; margin: auto;}
+            .companyname    { grid-area: companyname;  max-width: 90%; margin: auto;}
             .terms          { grid-area: terms;  max-width: 90%; margin: auto;}
             .message        { grid-area: message;  max-width: 90%; margin: auto;}
 

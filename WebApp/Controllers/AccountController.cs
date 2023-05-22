@@ -43,6 +43,12 @@ public class AccountController : Controller
     {
         if(ModelState.IsValid)
         {
+            if(viewModel.TermsAndConditions != true)
+            {
+                ModelState.AddModelError("", "You must accept the terms and conditions.");
+                return View(viewModel);
+            }
+
             if (await _auth.UserAlreadyExistsAsync(x => x.Email == viewModel.Email))
             {
                 ModelState.AddModelError("", "An account with this email already exists.");

@@ -8,20 +8,20 @@
 
 @if (products.Any())
 {
-    <div class="topSelling">
+    <div class="topselling">
         <h4 class="sectiontitle">Featured Products</h4>
 
-        <div class="topSelling-card-section">
+        <div class="topselling-card-section">
             @foreach (var product in products.Skip(7).Take(6))
             {
 
-                <div class="card topSelling-card">
+                <div class="card topselling-card">
                     <a asp-controller="Products" asp-action="Details" asp-route-productName="@product.ProductName">
                         <img class="card-image-small" alt="" src="@product.ImageUrl">
 
                         <div class="card-information">
                             <h6 class="card-title">@product.ProductName</h6>
-                            <p class="card-price">$@string.Format("{0:F0}", product.Price)</p>
+                            <p class="card-price">@string.Format("{0:F0}", product.Price):-</p>
                             <a class="to-cart"><i class="fa-light fa-cart-arrow-down"></i></a>
                         </div>
                     </a>
@@ -30,8 +30,5 @@
             }
         </div>
     </div>
-    <div>
-        <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="light-button arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
-    </div>
+
 }

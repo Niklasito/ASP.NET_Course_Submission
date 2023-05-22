@@ -5,10 +5,10 @@
  <section class="register-form">
     <div class="container form-container">
         <div class="title">@ViewData["Title"]</div>
-
+        <div asp-validation-summary="ModelOnly" class="text-danger d-flex justify-content-center"></div>
         <form method="post" novalidate>
 
-            <div asp-validation-summary="ModelOnly" class="text-danger d-flex justify-content-center"></div>
+            
 
             <div class="firstname form-group">
                 <label asp-for="FirstName"></label>
@@ -83,6 +83,7 @@
                     <label asp-for="TermsAndConditions"></label>
                     <input asp-for="TermsAndConditions">
                     <span class="checkmark"></span>
+                    <small><span asp-validation-for="TermsAndConditions"></span></small>
                 </label>
             </div>
             <span asp-validation-for="TermsAndConditions"></span>

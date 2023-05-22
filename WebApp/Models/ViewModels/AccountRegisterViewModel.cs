@@ -25,7 +25,7 @@ public class AccountRegisterViewModel
 
 
     [Display(Name = "City")]
-    public string? City { get; set; } = null!;
+    public string? City { get; set; }
 
     [Display(Name = "Phone number")]
 
