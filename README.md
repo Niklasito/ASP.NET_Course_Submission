@@ -12,6 +12,9 @@ Som admin kan man se alla användare under "Userlist" inne på admins backoffice
 
 Man kan dessutom skapa nya produkter med formuläret som finns under "create product".
 
+![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/6c768283-38e9-4283-90a7-f24a78bf5b41)
+
+
 ## För att logga in som admin:
 
 ### username/email: admin@merketo.com
