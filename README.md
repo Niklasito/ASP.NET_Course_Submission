@@ -7,8 +7,7 @@ Jag har använt en relationsdatabas och IdentityUser för detta ändamål.
 
 Som admin kan man se alla användare under "Userlist" inne på admins backoffice.
 
-![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/b4d40f5e-78aa-4106-b72b-be352299b3ef)
-
+![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/afed598f-7cd3-4823-9c07-7e046a44dd9d)
 
 
 Man kan dessutom skapa nya produkter med formuläret som finns under "create product".
