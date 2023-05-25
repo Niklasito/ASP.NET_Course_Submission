@@ -5,14 +5,18 @@ Välkommen till min kursinlämning i kursen ASP.NET.
 Inlämningen består av en webshop kallad BMERKETO. Man kan registrera nya användare där den första blir admin och resterande blir vanliga users.
 Jag har använt en relationsdatabas och IdentityUser för detta ändamål.
 
+![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/5c52399c-ad84-4cb8-b6f9-64f565df1f5f)
+
+
 Som admin kan man se alla användare under "Userlist" inne på admins backoffice.
 
-![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/afed598f-7cd3-4823-9c07-7e046a44dd9d)
+![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/0c29b08b-498f-4ef4-8878-856bdeea009d)
+
 
 
 Man kan dessutom skapa nya produkter med formuläret som finns under "create product".
 
-![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/6c768283-38e9-4283-90a7-f24a78bf5b41)
+![image](https://github.com/Niklasito/ASP.NET_Course_Submission/assets/110826266/ff2aa853-bc2c-4636-8e3d-877fea57af1f)
 
 
 ## För att logga in som admin:
